@@ -6,7 +6,7 @@ from pyrogram.types import Message
 import requests
 HB = Client(
     "YOUTUBE Bot",
-    bot_token = "5855237624:AAHvSVplVKTWKAwrVMKa9r1kIf2qUl0XrdE",
+    bot_token = "5820144966:AAEYUop5E4vQWmxWwBo9wBnx0IiSCJUs2C8",
     api_id = int(17983098),
     api_hash = "ee28199396e0925f1f44d945ac174f64"
 )  
@@ -305,7 +305,7 @@ async def ytdl(_, update):
    pyt = Playlist(purl)
   
    for video in pyt.videos:
-    phd =video.streams.get_highest_resolution()
+    phd =video.streams.get_by_resolution(resolution ='480p')
     
     await  HB.send_video(
             chat_id = update.chat.id, 
